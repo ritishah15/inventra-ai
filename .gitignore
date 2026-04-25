@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+build/
+
+# Database
+*.sqlite
+*.sqlite3
+inventra.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

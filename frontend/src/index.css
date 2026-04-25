@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif !important;
+    background: #09090b !important; /* Zinc 950 */
+    color: #f8fafc;
+  }
+}
+
+/* Overriding Tailwind classes globally to instantly reskin to Dark Mode */
+@layer utilities {
+  .bg-slate-50 {
+    background: #09090b !important; /* App background */
+  }
+
+  .bg-white {
+    background: rgba(24, 24, 27, 0.6) !important; /* Zinc 900 glass */
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 16px !important;
+  }
+
+  .bg-white:hover {
+    box-shadow: 0 8px 15px -1px rgba(0, 0, 0, 0.7) !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  .bg-slate-900 {
+    background: #000000 !important; /* Sidebar */
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .text-slate-900, .text-slate-800, .text-slate-700 {
+    color: #f8fafc !important; /* White text for headings */
+  }
+
+  .text-slate-600, .text-slate-500 {
+    color: #94a3b8 !important; /* Gray text for secondary */
+  }
+
+  .border-slate-100, .border-slate-200 {
+    border-color: rgba(255, 255, 255, 0.05) !important; /* Subtle borders */
+  }
+
+  /* Vibrant Neon Primary Color */
+  .bg-indigo-600 {
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%) !important; /* Cyan to Blue */
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3) !important;
+  }
+
+  .bg-indigo-600:hover {
+    background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%) !important;
+    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.5) !important;
+  }
+  
+  .text-indigo-600 {
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Form Inputs and Tables */
+  input {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #f8fafc !important;
+  }
+
+  th {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: #cbd5e1 !important;
+  }
+
+  tr:hover {
+    background: rgba(255, 255, 255, 0.02) !important;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px 2px rgba(6, 182, 212, 0.5); /* Cyan glow */
+  }
+  50% {
+    opacity: .5;
+    box-shadow: 0 0 5px 0px rgba(6, 182, 212, 0.2);
+  }
+}
+.animate-pulse {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
+}
